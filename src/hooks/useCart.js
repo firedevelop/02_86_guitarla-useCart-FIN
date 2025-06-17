@@ -6,14 +6,14 @@ export const useCart = () => {
         const localStorageCart = localStorage.getItem('cart')
         return localStorageCart ? JSON.parse(localStorageCart) : []
     }
-
+    
     const [data] = useState(db)
     const [cart, setCart] = useState(initialCart)
 
     const MIN_ITEMS = 1
     const MAX_ITEMS = 5
 
-    useEffect(() => {
+    useEffect(() => { 
         localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
 
